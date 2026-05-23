@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medinova</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+ <style>
+        :root {
+            --primary: #13C5DD;
+            --dark-blue: #1D2A4D;
+            --light-bg: #F8F9FA;
+            --card-blue: #EFF7F8;
+        }
+
+        body {
+            font-family: "Roboto Condensed",sans-serif;
+            color: #6c757d;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--dark-blue);
+            font-weight:700;
+        }
+
+       
+        .text-primary-color { color: var(--primary) !important; }
+        .bg-primary-color { background-color: var(--primary) !important; }
+        .bg-dark-blue { background-color: var(--dark-blue) !important; }
+
+        .top-bar-text { font-size: 0.9rem; }
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--dark-blue);
+            font-size: larger;
+            font-weight: bold;
+            padding: 25px 15px;
+            transition: .3s;
+            
+           
+            
+        }
+
+        
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+             border-bottom: 5px solid var(--primary);
+
+                
+
+        
+        }
+ 
+
+    .hero-header {
+    position: relative;
+    background: url('https://themewagon.github.io/Medinova/img/hero.jpg') top center no-repeat;
+    background-size: cover;
+}
+
+     
+    .service-card {
+    background-color: var(--card-blue);
+    border: none;
+    border-radius: 12px;
+    min-height: 320px;
+    position: relative;
+    overflow: visible;  
+}
+
+
+.service-arrow {
+    width: 65px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 50%;
+    bottom: -40px; 
+    transform: translateX(-50%);
+    
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+.service-card:hover .service-arrow {
+    bottom: -27px; 
+    opacity: 1;
+}
+
+.icon-box {
+    width: 120px;
+    height: 80px;
+    background: var(--primary);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    margin: 0 auto 25px;
+
+    transform: rotate(-18deg);
+}
+
+.icon-box i {
+    transform: rotate(18deg);
+    font-size: 28px;
+}
+
+
+.btn-dark-custom:hover,
+.btn-outline-dark:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.493);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--dark-blue);
+    color: white;
+    border-color: var(--dark-blue);
+}
+
+.form-control::placeholder,
+.form-select {
+    color: #a5acb3 !important;
+}
+
+.feature-badge {
+ background-color: var(--card-blue);
+border-radius: 50%;
+width: 130px;
+height: 105px;
+padding: 25px;
+text-align: center;
+    }
+
+.pricing-section {
+    position: relative;
+    background: white;
+    overflow: visible;
+    padding-bottom: 120px;
+}
+
+
+.pricing-section::after {
+    content: "";
+    position: absolute;
+    left:0;
+    bottom: 15px;
+    width: 100%;         
+    height: 350px;
+    background: var(--primary);
+    border-radius: 1% 1% 50% 50%; 
+    z-index: 1;
+    transform: scaleX(0.87);  
+    transform-origin: center;
+}
+
+
+.pricing-section .container {
+    position: relative;
+    z-index: 2;
+}
+ .price-card {
+ background: #fff;
+ border-radius: 10px;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+overflow: hidden;
+ width: 90%;
+ margin: auto;
+        }
+.price-header {
+   position: relative;
+    color: white;
+    padding: 40px 30px;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price-1 {
+    background: linear-gradient(rgba(29,42,68,0.8), rgba(29,42,68,0.8)),
+    url('https://themewagon.github.io/Medinova/img/price-1.jpg');
+}
+
+.price-2 {
+    background: linear-gradient(rgba(29,42,68,0.8), rgba(29,42,68,0.8)),
+    url('https://themewagon.github.io/Medinova/img/price-2.jpg');
+}
+
+.price-3 {
+    background: linear-gradient(rgba(29,42,68,0.8), rgba(29,42,68,0.8)),
+    url('https://themewagon.github.io/Medinova/img/price-3.jpg');
+}
+
+.btn-light {
+    background-color: white !important;
+    border: none;
+}
+.btn-light:hover i {
+    color: black !important;
+}
+
+.custom-arrow {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    
+}
+
+.carousel-control-prev {
+    left: 15px;
+}
+
+.carousel-control-next {
+    right: 15px;
+}
+
+.custom-arrow:hover {
+    background: var(--dark-blue);
+}
+
+.team-item img {
+ transition: .5s;
+        }
+.team-item:hover img {
+ transform: scale(1.1);
+        }
+ .team-social {
+            position: absolute;
+            left: -50px;
+            bottom: 20px;
+            opacity: 0;
+            transition: .5s;
+        }
+ .team-item:hover .team-social {
+      left: 20px;
+      opacity: 1;
+        }
+
+.btn-primary-custom {
+ background-color: var(--primary);
+ border: none;
+ color: #fff;
+            
+        }
+.btn-primary-custom:hover {
+     background-color: var(--primary);
+    color: #000000;
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.493);
+        }
+.btn-dark-custom {
+     background-color: var(--dark-blue);
+     border: none;
+     color: #fff;
+        }
+       .btn-dark-custom:hover {
+            background-color: #121b2c;
+            color: #fff;
+        }
+        .btn-search-custom{
+             background-color: var(--dark-blue);
+            border: none;
+            color: #fff;
+
+        }
+        .btn-search-custom:hover {
+            background: var(--dark-blue);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.493);
+}
+
+.carousel-indicators {
+    position: static;
+    margin-top: 35px;
+}
+
+.custom-indicator {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50%;
+    background-color: var(--light-bg) !important;
+    border: 1px solid var(--primary) !important;
+    opacity: 1 !important;
+    margin: 0 6px;
+    
+}
+
+.carousel-indicators .active {
+    background-color: var(--primary) !important;
+    transform: scale(1.7);
+    margin: 0 14px !important;
+
+
+}
+
+.blog-title{
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.blog-title:hover{
+    color: var(--primary);
+}
+
+.footer-title{
+    border-bottom: 5px solid rgba(135, 123, 226, 0.2);
+    padding-bottom: 5px;
+}
+
+.footer-text{
+    font-size: 15px;
+}
+
+.footer-link{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+
+.footer-social{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.footer-social:hover i{
+    color: black;
+    
+  
+}
+
+.btn-sign-custom{
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-sign-custom:hover{
+    background-color: var(--primary);
+    color: black;
+}
+#backToTop{
+    position: fixed;
+    right: 25px;
+    bottom: 0;
+    width: 40px;
+    height: 45px;
+    border: none;
+    border-radius: 30px 30px 0 0;
+    background: var(--primary);
+    color: white;
+    font-size: 18px;
+    display: none;
+    z-index: 999;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop:hover{
+    background: var(--primary);
+    color: black;
+}
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid  d-none d-lg-block border-bottom py-2">
+        <div class="container">
+            <div class="row top-bar-text align-items-center">
+               <div class="col-md-6 text-muted d-flex align-items-center">
+    <span class="pe-3 border-end border-2 border-secondary">
+        <i class="fa fa-phone me-2"></i>+012 345 6789
+    </span>
+
+    <span class="ps-3">
+        <i class="fa fa-envelope  me-2"></i>info@example.com
+    </span>
+</div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-secondary mx-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-secondary mx-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-secondary mx-2"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-secondary mx-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-secondary mx-2"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3 py-lg-0">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fa fa-clinic-medical text-primary-color fs-2 me-2"></i>
+                <h2 class="m-0 fw-bold text-uppercase text-primary-color">Medinova</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li><a class="dropdown-item" href="#">The Team</a></li>
+                            <li><a class="dropdown-item" href="#">Testimonial</a></li>
+                            <li><a class="dropdown-item" href="#">Search</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid hero-header py-5 mb-5" style="min-height: 85vh; display: flex; align-items: center;">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-9 text-start">
+       <h5 class="d-inline-block text-primary-color text-uppercase mb-3 fw-bold pb-2" 
+    style="border-bottom: 4px solid #9ca5ac;">
+    Welcome to Medinova
+</h5>
+                    <h1 class="display-1 text-white mb-md-4 fw-bold leading-tight">
+                        Best Healthcare Solution In Your City
+                    </h1>
+                    <div class="pt-2">
+                        <a href="#" class="btn btn-light rounded-pill py-3 px-5 me-3 fw-bold">Find Doctor</a>
+                        <a href="#" class="btn btn-outline-light rounded-pill py-3 px-5 fw-bold">Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded" src="https://themewagon.github.io/Medinova/img/about.jpg" alt="About Doctors" style="height: 520px; object-fit: cover;">
+                </div>
+                <div class="col-lg-7 d-flex flex-column justify-content-center">
+    <h5 class="text-uppercase text-primary-color mb-3 fw-bold"  style="border-bottom: 4px solid #ccd4d9; width: fit-content;">
+        About Us
+    </h5>
+
+    <h1 class="mb-4" style="font-size: 3rem;">
+        Best Medical Care For Yourself And Your Family
+    </h1>
+
+    <p class="text-muted mb-5" style="font-size: 1rem;">
+        Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna
+    </p>
+
+    <div class="row g-4">
+        <div class="col-sm-3 col-6">
+            <div class="feature-badge h-100">
+                <i class="fa fa-user-md text-primary-color fs-1 mb-3"></i>
+                <h6 class="mb-0 fw-bold">Qualified<br><span class="text-primary-color" style="font-size: 0.9rem;">Doctors</span></h6>
+            </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+            <div class="feature-badge h-100">
+                <i class="fa fa-3x fa-procedures text-primary-color fs-1 mb-3"></i>
+                <h6 class="mb-0 fw-bold">Emergency<br><span class="text-primary-color" style="font-size: 0.9rem;">Services</span></h6>
+            </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+            <div class="feature-badge h-100">
+                <i class="fa fa-3x fa-microscope text-primary-color fs-1 mb-3"></i>
+                <h6 class="mb-0 fw-bold">Accurate<br><span class="text-primary-color" style="font-size: 0.9rem;">Testing</span></h6>
+            </div>
+        </div>
+
+        <div class="col-sm-3 col-6">
+            <div class="feature-badge h-100">
+                <i class="fa fa-3x fa-ambulance  text-primary-color fs-1 mb-3"></i>
+                <h6 class="mb-0 fw-bold">Free<br><span class="text-primary-color" style="font-size: 0.9rem;">Ambulance</span></h6>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container text-center">
+            <h5 class="text-uppercase text-primary-color mb-3 fw-bold" style="border-bottom: 4px solid #ccd4d9; width: fit-content; margin: auto;">Services</h5>
+            <h1 class=" mb-5 fw-bold w-50 mx-auto"style="font-size: 3.2rem;">Excellent Medical Services</h1>
+            <div class="row gx-4 gy-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card p-4 text-center">
+                       <div class="icon-box mt-4">
+                         <i class="fa fa-2x fa-user-md fs-2"></i>
+                        </div>
+                        <h4 class="mb-3">Emergency Care</h4>
+                        <p class="mb-0 text-muted">Kasd dolor lorem sit justo vero ipsum. Justo amet consetetur lorem amet elitr vero sea stet.</p>
+                        <div class="service-arrow">
+                            <i class="fa fa-arrow-right"></i>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card p-4 text-center">
+                        <div class="icon-box mt-4">
+                         <i class="fa fa-2x fa-procedures fs-2"></i>
+                        </div>
+                        <h4 class="mb-3">Operation & Surgery</h4>
+                        <p class="mb-0 text-muted">Kasd dolor lorem sit justo vero ipsum. Justo amet consetetur lorem amet elitr vero sea stet.</p>
+                        <div class="service-arrow">
+                                  <i class="fa fa-arrow-right"></i>
+                                 </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card p-4 text-center">
+                        <div class="icon-box mt-4">
+                         <i class="fa fa-2x fa-stethoscope fs-2"></i>
+                        </div>
+                        <h4 class="mb-3">Outdoor Checkup</h4>
+                        <p class="mb-0 text-muted">Kasd dolor lorem sit justo vero ipsum. Justo amet consetetur lorem amet elitr vero sea stet.</p>
+                        <div class="service-arrow">
+                       <i class="fa fa-arrow-right"></i>
+                           </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card p-4 text-center">
+                        <div class="icon-box mt-4">
+                         <i class="fa fa-2x fa-ambulance fs-2"></i>
+                        </div>
+                        <h4 class="mb-3">Ambulance Service</h4>
+                        <p class="mb-0 text-muted">Kasd dolor lorem sit justo vero ipsum. Justo amet consetetur lorem amet elitr vero sea stet.</p>
+                        <div class="service-arrow">
+                            <i class="fa fa-arrow-right"></i>
+                           </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card p-4 text-center">
+                        <div class="icon-box mt-4">
+                         <i class="fa fa-2x fa-pills fs-2"></i>
+                        </div>
+                        <h4 class="mb-3">Medicine & Pharmacy</h4>
+                        <p class="mb-0 text-muted">Kasd dolor lorem sit justo vero ipsum. Justo amet consetetur lorem amet elitr vero sea stet.</p>
+                        <div class="service-arrow">
+                           <i class="fa fa-arrow-right"></i>
+                             </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card p-4 text-center">
+                        <div class="icon-box mt-4">
+                         <i class="fa fa-2x fa-microscope fs-2"></i>
+                        </div>
+                        <h4 class="mb-3">Blood Testing</h4>
+                        <p class="mb-0 text-muted">Kasd dolor lorem sit justo vero ipsum. Justo amet consetetur lorem amet elitr vero sea stet.</p>
+                        <div class="service-arrow">
+                         <i class="fa fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-primary-color py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 text-white">
+                    <h5 class="text-uppercase text-white d-inline-block pb-2 mb-3 fw-bold" style="border-bottom: 5px solid #ccd4d9;">Appointment </h5>
+                    <h1 class="text-dark-blue mb-4 display-6" style="font-weight: 800;">Make An Appointment For Your Family</h1>
+                    <p class="mb-4">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                    <a class="btn btn-dark-custom rounded-pill py-3 px-5 me-3 fw-bold" href="#">Find Doctor</a>
+                    <a class="btn btn-outline-dark rounded-pill py-3 px-5 fw-bold" href="#">Read More</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-white p-5 rounded">
+                        <h3 class="mb-4 text-center text-dark-blue" style="font-weight: 800;">Book An Appointment</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <select class="form-select bg-light border-0 py-3"><option>Choose Department</option>
+                                    <option>Department 1</option>
+                                <option>Department 2</option></select>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select bg-light border-0 py-3"><option>Select Doctor</option>
+                                    <option>Doctor 1</option>
+                                <option>Doctor 2</option></select>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control bg-light border-0 py-3" placeholder="Your Name">
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control bg-light border-0 py-3" placeholder="Your Email">
+                                </div>
+                                <div class="col-6">
+                                 <input type="text" class="form-control bg-light border-0 py-3" placeholder="Date">
+                                        </div>
+                                  <div class="col-6">
+                                       <input type="text" class="form-control bg-light border-0 py-3" placeholder="Time">
+                                        </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary-custom w-100 py-3 fw-bold" type="submit">Make An Appointment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 pricing-section">
+    <div class="container text-center py-5">
+
+        <h5 class="text-uppercase text-primary-color mb-3 fw-bold d-inline-block"
+            style="border-bottom: 5px solid #ccd4d9;">
+            Medical Packages
+        </h5>
+
+        <div class="col-lg-5 mx-auto">
+            <h1 class="mb-5" style="font-weight: 800;">Awesome Medical Programs</h1>
+        </div>
+
+        <div id="pricingCarousel" class="carousel slide" data-bs-ride="false">
+
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row g-4 justify-content-center">
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="price-card text-center">
+                                <div class="price-header price-1">
+                                    <h4 class="text-white mb-2" style="font-weight: 800;">Dental Care</h4>
+                                    <h1 class="display-6 text-white mb-0">
+                                        <small class="align-top fs-4">$</small><span class="number fw-bold">149</span>
+                                        <small class="align-bottom fs-6">/ Year</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 bg-light text-muted">
+                                    <p class="pb-3">Emergency Medical Treatment</p>
+                                    <p class="pb-3">Highly Experienced Doctors</p>
+                                    <p class="pb-3">Highest Success Rate</p>
+                                    <p class="mb-4">Telephone Service</p>
+                                    <a href="#" class="btn btn-primary-custom rounded-pill px-4 py-2 fw-bold">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="price-card text-center">
+                                <div class="price-header price-2">
+                                    <h4 class="text-white mb-2" style="font-weight: 800;">Operation & Surgery</h4>
+                                    <h1 class="display-6 text-white mb-0">
+                                        <small class="align-top fs-4">$</small><span class="number fw-bold">199</span>
+                                        <small class="align-bottom fs-6">/ Year</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 bg-light text-muted">
+                                    <p class="pb-3">Emergency Medical Treatment</p>
+                                    <p class="pb-3">Highly Experienced Doctors</p>
+                                    <p class="pb-3">Highest Success Rate</p>
+                                    <p class="mb-4">Telephone Service</p>
+                                    <a href="#" class="btn btn-primary-custom rounded-pill px-4 py-2 fw-bold">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="price-card text-center">
+                                <div class="price-header price-3">
+                                    <h4 class="text-white mb-2" style="font-weight: 800;">Pregnancy Care</h4>
+                                    <h1 class="display-6 text-white mb-0">
+                                        <small class="align-top fs-4">$</small><span class="number fw-bold">49</span>
+                                        <small class="align-bottom fs-6">/ Year</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 bg-light text-muted">
+                                    <p class="pb-3">Emergency Medical Treatment</p>
+                                    <p class="pb-3">Highly Experienced Doctors</p>
+                                    <p class="pb-3">Highest Success Rate</p>
+                                    <p class="mb-4">Telephone Service</p>
+                                    <a href="#" class="btn btn-primary-custom rounded-pill px-4 py-2 fw-bold">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row g-4 justify-content-center">
+
+                          <div class="col-lg-4 col-md-6">
+                            <div class="price-card text-center">
+                                <div class="price-header price-1">
+                                    <h4 class="text-white mb-2" style="font-weight: 800;">Dental Care</h4>
+                                    <h1 class="display-6 text-white mb-0">
+                                        <small class="align-top fs-4">$</small><span class="number fw-bold">149</span>
+                                        <small class="align-bottom fs-6">/ Year</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 bg-light text-muted">
+                                    <p class="pb-3">Emergency Medical Treatment</p>
+                                    <p class="pb-3">Highly Experienced Doctors</p>
+                                    <p class="pb-3">Highest Success Rate</p>
+                                    <p class="mb-4">Telephone Service</p>
+                                    <a href="#" class="btn btn-primary-custom rounded-pill px-4 py-2 fw-bold">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="price-card text-center">
+                                <div class="price-header price-2">
+                                    <h4 class="text-white mb-2" style="font-weight: 800;">Operation & Surgery</h4>
+                                    <h1 class="display-6 text-white mb-0">
+                                        <small class="align-top fs-4">$</small><span class="number fw-bold">199</span>
+                                        <small class="align-bottom fs-6">/ Year</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 bg-light text-muted">
+                                    <p class="pb-3">Emergency Medical Treatment</p>
+                                    <p class="pb-3">Highly Experienced Doctors</p>
+                                    <p class="pb-3">Highest Success Rate</p>
+                                    <p class="mb-4">Telephone Service</p>
+                                    <a href="#" class="btn btn-primary-custom rounded-pill px-4 py-2 fw-bold">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="price-card text-center">
+                                <div class="price-header price-3">
+                                    <h4 class="text-white mb-2" style="font-weight: 800;">Pregnancy Care</h4>
+                                    <h1 class="display-6 text-white mb-0">
+                                        <small class="align-top fs-4">$</small><span class="number fw-bold">49</span>
+                                        <small class="align-bottom fs-6">/ Year</small>
+                                    </h1>
+                                </div>
+                                <div class="p-4 bg-light text-muted">
+                                    <p class="pb-3">Emergency Medical Treatment</p>
+                                    <p class="pb-3">Highly Experienced Doctors</p>
+                                    <p class="pb-3">Highest Success Rate</p>
+                                    <p class="mb-4">Telephone Service</p>
+                                    <a href="#" class="btn btn-primary-custom rounded-pill px-4 py-2 fw-bold">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                   
+
+            </div>
+
+      <div class="text-center mt-4">
+
+    <button class="btn btn-light rounded-circle me-2"
+            data-bs-target="#pricingCarousel"
+            data-bs-slide="prev">
+        <i class="fa fa-arrow-left text-primary-color"></i>
+    </button>
+
+    <button class="btn btn-light rounded-circle"
+            data-bs-target="#pricingCarousel"
+            data-bs-slide="next">
+        <i class="fa fa-arrow-right text-primary-color"></i>
+    </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="curved-bg-bottom"></div>
+                </div>
+
+  <div class="container-fluid py-5">
+    <div class="container text-center">
+        <h5 class="text-uppercase text-primary-color mb-3 fw-bold d-inline-block"
+            style="border-bottom: 5px solid #ccd4d9;">Our Doctors</h5>
+
+        <div class="col-lg-5 mx-auto">
+            <h1 class="mb-5 text-dark-blue" style="font-weight: 800;">
+                Qualified Healthcare Professionals
+            </h1>
+        </div>
+
+        <div id="doctorCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row g-4 justify-content-center">
+
+                        <!-- card 1 -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="row g-0 bg-light rounded overflow-hidden">
+                                <div class="col-12 col-sm-5 text-center">
+                                    <img class="img-fluid h-100"
+                                        src="https://themewagon.github.io/Medinova/img/team-1.jpg"
+                                        style="object-fit: cover;">
+                                </div>
+                                <div class="col-12 col-sm-7 p-5 text-start d-flex flex-column justify-content-center">
+                                    <h4 class="mb-1">Doctor Name</h4>
+                                    <small class="text-primary-color text-uppercase mb-3 fst-italic">Cardiology Specialist</small>
+                                    <p class="text-muted mb-4">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
+                                    <div class="d-flex gap-3 border-top pt-4 mt-4 border-secondary">
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-twitter fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-facebook-f fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-linkedin-in fs-5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card 2 -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="row g-0 bg-light rounded overflow-hidden">
+                                <div class="col-12 col-sm-5 text-center">
+                                    <img class="img-fluid h-100"
+                                        src="https://themewagon.github.io/Medinova/img/team-2.jpg"
+                                        style="object-fit: cover;">
+                                </div>
+                                <div class="col-12 col-sm-7 p-5 text-start d-flex flex-column justify-content-center">
+                                    <h4 class="mb-1">Doctor Name</h4>
+                                    <small class="text-primary-color text-uppercase mb-3 fst-italic">Cardiology Specialist</small>
+                                    <p class="text-muted mb-4">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
+                                    <div class="d-flex gap-3 border-top pt-4 mt-4 border-secondary">
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-twitter fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-facebook-f fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-linkedin-in fs-5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- slide 2 -->
+                <div class="carousel-item">
+                    <div class="row g-4 justify-content-center">
+
+                        <!-- card 2 -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="row g-0 bg-light rounded overflow-hidden">
+                                <div class="col-12 col-sm-5 text-center">
+                                    <img class="img-fluid h-100"
+                                        src="https://themewagon.github.io/Medinova/img/team-2.jpg"
+                                        style="object-fit: cover;">
+                                </div>
+                                <div class="col-12 col-sm-7 p-5 text-start d-flex flex-column justify-content-center">
+                                    <h4 class="mb-1">Doctor Name</h4>
+                                    <small class="text-primary-color text-uppercase mb-3 fst-italic">Cardiology Specialist</small>
+                                    <p class="text-muted mb-4">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
+                                    <div class="d-flex gap-3 border-top pt-4 mt-4 border-secondary">
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-twitter fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-facebook-f fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-linkedin-in fs-5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card 3 -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="row g-0 bg-light rounded overflow-hidden">
+                                <div class="col-12 col-sm-5 text-center">
+                                    <img class="img-fluid h-100"
+                                        src="https://themewagon.github.io/Medinova/img/team-3.jpg"
+                                        style="object-fit: cover;">
+                                </div>
+                                <div class="col-12 col-sm-7 p-5 text-start d-flex flex-column justify-content-center">
+                                    <h4 class="mb-1">Doctor Name</h4>
+                                    <small class="text-primary-color text-uppercase mb-3 fst-italic">Cardiology Specialist</small>
+                                    <p class="text-muted mb-4">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
+                                    <div class="d-flex gap-3 border-top pt-4 mt-4 border-secondary">
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-twitter fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-facebook-f fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-linkedin-in fs-5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- slide 3 -->
+                <div class="carousel-item">
+                    <div class="row g-4 justify-content-center">
+
+                        <!-- card 3 -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="row g-0 bg-light rounded overflow-hidden">
+                                <div class="col-12 col-sm-5 text-center">
+                                    <img class="img-fluid h-100"
+                                        src="https://themewagon.github.io/Medinova/img/team-3.jpg"
+                                        style="object-fit: cover;">
+                                </div>
+                                <div class="col-12 col-sm-7 p-5 text-start d-flex flex-column justify-content-center">
+                                    <h4 class="mb-1">Doctor Name</h4>
+                                    <small class="text-primary-color text-uppercase mb-3 fst-italic">Cardiology Specialist</small>
+                                    <p class="text-muted mb-4">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
+                                    <div class="d-flex gap-3 border-top pt-4 mt-4 border-secondary">
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-twitter fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-facebook-f fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-linkedin-in fs-5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card 1 -->
+                        <div class="col-lg-6 col-md-6">
+                            <div class="row g-0 bg-light rounded overflow-hidden">
+                                <div class="col-12 col-sm-5 text-center">
+                                    <img class="img-fluid h-100"
+                                        src="https://themewagon.github.io/Medinova/img/team-1.jpg"
+                                        style="object-fit: cover;">
+                                </div>
+                                <div class="col-12 col-sm-7 p-5 text-start d-flex flex-column justify-content-center">
+                                    <h4 class="mb-1">Doctor Name</h4>
+                                    <small class="text-primary-color text-uppercase mb-3 fst-italic">Cardiology Specialist</small>
+                                    <p class="text-muted mb-4">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
+                                    <div class="d-flex gap-3 border-top pt-4 mt-4 border-secondary">
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-twitter fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-facebook-f fs-5"></i></a>
+                                        <a class="btn btn-primary-custom btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;" href="#"><i class="fab fa-linkedin-in fs-5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+           <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">
+              <i class="fa fa-arrow-left"></i>
+                      </button>
+
+                  <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#doctorCarousel" data-bs-slide="next">
+                       <i class="fa fa-arrow-right"></i>
+                           </button>
+                         </div>
+                      </div>
+                     </div>
+
+    <div class="container-fluid bg-primary-color py-5 d-flex align-items-center"  style="min-height: 500px;">
+        <div class="container text-center text-white">
+            <h5 class="text-uppercase text-white mb-2 fw-bold d-inline-block" style="border-bottom: 5px solid #ccd4d9;">Find A Doctor</h5>
+              <div class="col-lg-5 mx-auto">
+            <h1 class="text-dark-blue mb-4" style="font-size: 50px; font-weight: 800;">Find A Healthcare Professionals</h1>
+            </div>
+             <div class="col-lg-5 mx-auto">
+            <p class="text-white mb-4" style="font-size: 19px;">
+                Duo ipsum erat stet dolor sea ut nonumy tempor. Tempor duo lorem eos sit sed ipsum takimata ipsum sit est. Ipsum ea voluptua ipsum sit justo
+            </p>
+        </div>
+
+            <div class="mx-auto" style="max-width: 600px;">
+                <div class="input-group">
+                    <select class="form-select border-0 py-3 w-25"><option>Department</option>
+                    <option>Department 1</option>
+                <option>Department 2</option>
+            </select>
+                    <input type="text" class="form-control border-0 py-3 w-50" placeholder="Keyword">
+                    <button class="btn btn-search-custom px-4 fw-bold w-25">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container-fluid py-5">
+    <div class="container text-center">
+
+        <h5 class="text-uppercase text-primary-color mb-3 fw-bold d-inline-block"
+            style="border-bottom: 5px solid #ccd4d9;">
+            Testimonial
+        </h5>
+
+        <div class="col-lg-5 mx-auto">
+            <h1 class="mb-5" style="font-size: 50px; font-weight: 800;">
+                Patients Say About Our Services
+            </h1>
+        </div>
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+
+            <div class="carousel-inner">
+
+                <!-- item 1 -->
+                <div class="carousel-item active">
+                    <div class="position-relative d-inline-block mx-auto" style="max-width: 800px;">
+
+                        <div class="position-relative d-inline-block mb-5">
+                            <img class="img-fluid rounded-circle p-2"
+                                src="https://themewagon.github.io/Medinova/img/testimonial-1.jpg"
+                                style="width: 155px; height: 155px;">
+
+                            <div class="position-absolute start-50 translate-middle-x bg-white rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 55px; height: 55px; bottom: -10px;">
+                                <i class="fa fa-quote-left text-primary-color fs-2"></i>
+                            </div>
+                        </div>
+
+                        <p class="fs-4 text-muted mb-4">
+                          Dolores sed duo clita tempor justo dolor et stet lorem kasd laboredolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam temporerat. Erat dolor rebum sit ipsum.                        </p>
+
+                        <h5 class="mb-1 border-top pt-4 mt-4 border-secondary d-inline-block fw-bold fs-4">
+                            Patient Name
+                        </h5>
+                        <div><span class="text-primary-color">Profession</span></div>
+                    </div>
+                </div>
+
+                <!-- item 2 -->
+                <div class="carousel-item">
+                    <div class="position-relative d-inline-block mx-auto" style="max-width: 800px;">
+
+                        <div class="position-relative d-inline-block mb-5">
+                            <img class="img-fluid rounded-circle p-2"
+                                src="https://themewagon.github.io/Medinova/img/testimonial-3.jpg"
+                                style="width: 155px; height: 155px;">
+
+                            <div class="position-absolute start-50 translate-middle-x bg-white rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 55px; height: 55px; bottom: -10px;">
+                                <i class="fa fa-quote-left text-primary-color fs-2"></i>
+                            </div>
+                        </div>
+
+                        <p class="fs-4 text-muted mb-4">
+                        Dolores sed duo clita tempor justo dolor et stet lorem kasd laboredolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam temporerat. Erat dolor rebum sit ipsum.                        </p>
+
+                        <h5 class="mb-1 border-top pt-4 mt-4 border-secondary d-inline-block fw-bold fs-4">
+                            Patient Name
+                        </h5>
+                        <div><span class="text-primary-color">Profession</span></div>
+                    </div>
+                </div>
+
+                <!-- item 3 -->
+                <div class="carousel-item">
+                    <div class="position-relative d-inline-block mx-auto" style="max-width: 800px;">
+
+                        <div class="position-relative d-inline-block mb-5">
+                            <img class="img-fluid rounded-circle p-2"
+                                src="https://themewagon.github.io/Medinova/img/testimonial-2.jpg"
+                                style="width: 155px; height: 155px;">
+
+                            <div class="position-absolute start-50 translate-middle-x bg-white rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 55px; height: 55px; bottom: -10px;">
+                                <i class="fa fa-quote-left text-primary-color fs-2"></i>
+                            </div>
+                        </div>
+
+                        <p class="fs-4 text-muted mb-4">
+                        Dolores sed duo clita tempor justo dolor et stet lorem kasd laboredolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam temporerat. Erat dolor rebum sit ipsum.</p>
+
+                        <h5 class="mb-1 border-top pt-4 mt-4 border-secondary d-inline-block fw-bold fs-4">
+                            Patient Name
+                        </h5>
+                        <div><span class="text-primary-color">Profession</span></div>
+                    </div>
+                </div>   
+
+            </div>
+
+
+            <div class="carousel-indicators position-static mt-4">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                    class="active custom-indicator"></button>
+
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                    class="custom-indicator"></button>
+
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+                    class="custom-indicator"></button>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+  <div class="container-fluid py-5">
+    <div class="container text-center">
+
+        <h5 class="text-uppercase text-primary-color mb-3 fw-bold d-inline-block"
+            style="border-bottom: 5px solid #ccd4d9;">
+            Blog Post
+        </h5>
+
+        <div class="col-lg-5 mx-auto">
+            <h1 class="mb-5" style="font-size: 50px; font-weight: 800;">
+                Our Latest Medical Blog Posts
+            </h1>
+        </div>
+
+        <div class="row g-5">
+
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 bg-light text-start  d-flex flex-column"  style="min-height: 500px;"> 
+
+                    <img src="https://themewagon.github.io/Medinova/img/blog-1.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover;">
+
+                    <div class="p-4 flex-grow-1">
+
+                        <h3 class="fw-bold text-dark-blue mb-4 blog-title"
+                            style="font-size: 25px;">
+                            Dolor clita vero elitr sea stet dolor justo diam
+                        </h3>
+
+                        <p class="text-muted mb-0"
+                           style="font-size: 16.5px;">
+                            Dolor lorem eos dolor duo et eirmod sea.
+                            Dolor sit magna rebum clita rebum dolor stet amet justo
+                        </p>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center px-4 py-3 border-top">
+
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="https://themewagon.github.io/Medinova/img/user.jpg"
+                                 class="rounded-circle"
+                                 style="width: 30px; height: 30 px; object-fit: cover;">
+
+                            <span class="text-muted" style="font-size: 14px;">John Doe</span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-4 text-muted" style="font-size: 14px;">
+
+                            <div class="d-flex align-items-center gap-1">
+                                <i class="far fa-eye text-primary-color"></i>
+                                <span>12345</span>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-1">
+                                 <i class="far fa-comment text-primary-color"></i>
+                                <span>123</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 bg-light text-start d-flex flex-column" style="min-height: 500px;">
+
+                    <img src="https://themewagon.github.io/Medinova/img/blog-2.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover;">
+
+                    <div class="p-4 flex-grow-1">
+
+                        <h3 class="fw-bold text-dark-blue mb-4 blog-title"
+                            style="font-size: 25px;">
+                            Dolor clita vero elitr sea stet dolor justo diam
+                        </h3>
+
+                        <p class="text-muted mb-0"
+                           style=" font-size: 16.5px;">
+                            Dolor lorem eos dolor duo et eirmod sea.
+                            Dolor sit magna rebum clita rebum dolor stet amet justo
+                        </p>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center px-4 py-3 border-top">
+
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="https://themewagon.github.io/Medinova/img/user.jpg"
+                                 class="rounded-circle"
+                                 style="width: 30px; height: 30px; object-fit: cover;">
+
+                            <span class="text-muted" style="font-size: 14px;">John Doe</span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-4 text-muted" style="font-size: 14px;">
+
+                            <div class="d-flex align-items-center gap-1">
+                                <i class="far fa-eye text-primary-color"></i>
+                                <span>12345</span>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-1">
+                                 <i class="far fa-comment text-primary-color"></i>
+                                <span>123</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 bg-light text-start d-flex flex-column" style="min-height: 500px;">
+
+                    <img src="https://themewagon.github.io/Medinova/img/blog-3.jpg"
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover;">
+
+                    <div class="p-4 flex-grow-1">
+
+                        <h3 class="fw-bold text-dark-blue mb-4 blog-title"
+                            style="font-size: 25px;">
+                            Dolor clita vero elitr sea stet dolor justo diam
+                        </h3>
+
+                        <p class="text-muted mb-0"
+                           style=" font-size: 16.5px;">
+                            Dolor lorem eos dolor duo et eirmod sea.
+                            Dolor sit magna rebum clita rebum dolor stet amet justo
+                        </p>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center px-4 py-3 border-top">
+
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="https://themewagon.github.io/Medinova/img/user.jpg"
+                                 class="rounded-circle"
+                                 style="width: 30px; height: 30px; object-fit: cover;">
+
+                            <span class="text-muted" style="font-size: 14px;">John Doe</span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-4 text-muted" style="font-size: 14px;">
+
+                            <div class="d-flex align-items-center gap-1">
+                                <i class="far fa-eye text-primary-color"></i>
+                                <span>12345</span>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-1">
+                                <i class="far fa-comment text-primary-color"></i>
+                                <span>123</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+  <footer class="container-fluid bg-dark-blue text-light pt-4"
+        style="margin-top: 120px;">
+
+    <div class="container py-4">
+
+        <div class="row g-5 justify-content-center text-md-start text-center">
+
+            <div class="col-lg-3 col-md-6 pt-3">
+
+                <h5 class="text-uppercase fw-bold text-primary-color d-inline-block mb-3 footer-title"
+                    style="font-size: 19px;">
+                    Get In Touch
+                </h5>
+
+                <p class="text-white mb-3 footer-text"
+                   style="font-size: 16px;">
+                    No dolore ipsum accusam no lorem.
+                    Invidunt sed clita kasd clita et et dolor sed dolor
+                </p>
+
+                <p class="mb-2 footer-text">
+                    <i class="fa fa-map-marker-alt text-primary-color me-2"></i>
+                    123 Street, New York, USA
+                </p>
+
+                <p class="mb-2 footer-text">
+                    <i class="fa fa-envelope text-primary-color me-2"></i>
+                    info@example.com
+                </p>
+
+                <p class="mb-0 footer-text">
+                    <i class="fa fa-phone text-primary-color me-2"></i>
+                    +012 345 67890
+                </p>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 pt-3">
+
+                <h5 class="text-uppercase fw-bold text-primary-color d-inline-block mb-3 footer-title"
+                    style="font-size: 19px;">
+                    Quick Links
+                </h5>
+
+                <div class="d-flex flex-column gap-2">
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Home
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> About Us
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Our Services
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Meet The Team
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Latest Blog
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 pt-3">
+
+                <h5 class="text-uppercase fw-bold text-primary-color d-inline-block mb-3 footer-title"
+                    style="font-size: 19px;">
+                    Popular Links
+                </h5>
+
+                <div class="d-flex flex-column gap-2">
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Home
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> About Us
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Our Services
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Meet The Team
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Latest Blog
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        <i class="fa fa-angle-right me-2"></i> Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 pt-3">
+
+                <h5 class="text-uppercase fw-bold text-primary-color d-inline-block mb-3 footer-title"
+                    style="font-size: 19px;">
+                    Newsletter
+                </h5>
+
+                <form class="mb-4">
+
+                    <div class="input-group">
+
+                        <input type="email"
+                               class="form-control border-0 p-3"
+                               placeholder="Your Email Address">
+
+                        <button class="btn btn-sign-custom px-3 fw-bold">
+                            Sign Up
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <h6 class="text-uppercase text-primary-color fw-bold mb-3"
+                    style="font-size: 14px;">
+                    Follow Us
+                </h6>
+
+                <div class="d-flex gap-2 justify-content-md-start justify-content-center">
+
+                    <a href="#" class="footer-social">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+
+                    <a href="#" class="footer-social">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" class="footer-social">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#" class="footer-social">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid border-top border-secondary py-3 mt-4">
+
+        <div class="container">
+
+            <div class="row gy-2">
+
+                <div class="col-md-6 text-center text-md-start footer-text">
+                    © <span class="text-primary-color ">Your Site Name.</span>
+                    All Rights Reserved.
+                </div>
+
+                <div class="col-md-6 text-center text-md-end footer-text">
+                    Designed by
+                    <span class="text-primary-color">HTML Codex.</span>
+                    Distributed by
+                    <span class="text-primary-color">ThemeWagon.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<button id="backToTop">
+    <i class="fa fa-arrow-up"></i>
+</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 300){
+        backToTop.style.display = "block";
+    }else{
+        backToTop.style.display = "none";
+    }
+
+});
+
+backToTop.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+</script>
+</body>
+</html>
